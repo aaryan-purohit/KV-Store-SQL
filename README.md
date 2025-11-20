@@ -1,6 +1,6 @@
 ### Key Value Store on top of MySql
 
-Personal project to learn how to build Key value store on top of MySQL
+Personal project to learn how to build Key value store along with sharding (using hashing) on top of MySQL
 
 ### Requirements
 
@@ -14,13 +14,14 @@ Personal project to learn how to build Key value store on top of MySQL
     ```
 
 * ```sql
-    CREATE TABLE kv_store_main (
+    CREATE TABLE kv_store_{i} (
     `key` VARCHAR(255) NOT NULL,
     `value` JSON NOT NULL,
     `expired_at` DATETIME NULL,
     PRIMARY KEY (`key`)
     );
     ```
+    Note - Here replace `{i}` with shard number.
 
 ### How to Run
 (database_helper/)
